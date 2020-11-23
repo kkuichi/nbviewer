@@ -45,8 +45,7 @@ RUN python3 -mpip install --no-cache /wheels/*
 # docker run -d -e NBVIEWER_THREADS=4 -p 80:8080 nbviewer
 ENV NBVIEWER_THREADS 2
 WORKDIR /srv/nbviewer
-EXPOSE 8080
 USER nobody
 
-EXPOSE 9000
+EXPOSE 8080
 CMD ["python", "-m", "nbviewer", "--port=8080"]

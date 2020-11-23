@@ -6,7 +6,7 @@
     "headroom.js": "0.7.0",
     "requirejs": "~2.1",
     "moment": "~2.8.4",
-    "bootstrap": "components/bootstrap#~3.3",
+    "bootstrap": "components/bootstrap#~3.4",
     "font-awesome": "~4",
     "pygments": "~2.0.0",
     "reveal.js": "~3.1.0"
