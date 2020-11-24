@@ -97,7 +97,7 @@ def less(ctx, debug=False):
 
     args = (extra, NOTEBOOK_STATIC_PATH)
 
-    for less_file in ["styles", "notebook", "slides", "custom"]:
+    for less_file in ["styles", "notebook", "slides"]:
         ctx.run(tmpl.format(less_file, *args))
 
 

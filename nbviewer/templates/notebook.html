@@ -2,7 +2,6 @@
 
 {% import "layout.html" as layout with context %}
 
-
 {% block otherlinks %}
   {% for fmt_name, fmt in formats.items() %}
     {% if format != fmt_name %}
@@ -14,21 +13,12 @@
     {% endif %}
   {% endfor %}
 
-  {% if "kernelspec" in nb.metadata %}
-    {{ layout.head_icon("#", nb.metadata.kernelspec.display_name + " Kernel", "server") }}
-  {% endif %}
-
   {% if provider_url %}
     {{ layout.head_icon(provider_url, "View on " + provider_label, provider_icon) }}
   {% endif %}
 
-  {% if executor_url %}
-    {{ layout.head_icon(executor_url, "Execute on " + executor_label, executor_icon) }}
-  {% endif %}
-
   {{ layout.head_icon(download_url, "Download Notebook", "download", True) }}
 {% endblock %}
-
 
 {% block extra_head %}
   {{ super() }}
@@ -47,10 +37,6 @@
   {% block style_base %}
     <link href="{{ static_url("build/notebook.css") }}" rel="stylesheet">
   {% endblock %}
-
-  {% if css_theme %}
-    <link href="{{ static_url("css/theme/{{css_theme}}.css") }} rel="stylesheet">
-  {% endif %}
 
   {% block mathjax %}
     <script src="{{ mathjax_url }}MathJax.js?config=TeX-AMS_HTML" type="text/javascript">
@@ -112,7 +98,6 @@
   {% endblock ipywidgets %}
 {% endblock extra_head %}
 
-
 {% block body %}
   {{ link_breadcrumbs(breadcrumbs) }}
   <div id="notebook">
@@ -121,7 +106,6 @@
     </div>
   </div>
 {% endblock %}
-
 
 {% block extra_script %}
   {{super()}}
@@ -137,26 +121,3 @@
     })});
   </script>
 {% endblock extra_script %}
-
-
-{% block version_info %}
-  {{super()}}
-  {% if jupyter_info %}
-  <p>
-    nbconvert version: <a href="https://github.com/jupyter/nbconvert/releases/tag/{{jupyter_info['nbconvert_version']}}">
-      {{jupyter_info['nbconvert_version']}}
-    </a>
-  </p>
-  {% endif %}
-{% endblock version_info %}
-
-
-{% block extra_footer %}
-  {{super()}}
-  {% if date %}
-  <p>
-    Rendered
-    <span class='date' data-date='{{date}}' title='{{date}}'>({{date}})</span>
-  </p>
-  {% endif %}
-{% endblock extra_footer %}

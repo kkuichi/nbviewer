@@ -8,27 +8,6 @@
     {% if text %}
     {{ text | markdown | safe }}
     {% endif %}
-    {% if show_input %}
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <form method="post" action="{{ from_base('/create/') }}">
-          <div class="input-group">
-            <input class="form-control"
-             id="main-input"
-             type="text"
-             name="gistnorurl"
-             autofocus="autofocus"
-             placeholder="URL | GitHub username | GitHub username/repo | Gist ID"/>
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="submit" type="button">
-                Go!
-              </button>
-            </span>
-          </div>
-        </form>
-      </div>
-    </div>
-    {% endif %} 
   </header>
   {% endif %}
 
