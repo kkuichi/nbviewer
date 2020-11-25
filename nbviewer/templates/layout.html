@@ -11,8 +11,8 @@
 {% macro head_icon(url, name, icon, download=False) -%}
   <li>
     <a href="{{ from_base(url) }}" title="{{name}}" {%if download %}download{% endif %}>
-      <i class="fa fa-{{icon}} menu-icon"></i>
-      <span class="menu-text">{{name}}</span>
+      <span class="fa fa-{{icon}}"></span>
+      <span>{{name}}</span>
     </a>
   </li>
 {%- endmacro %}
@@ -21,9 +21,11 @@
   {% if crumbs %}
   <ol class="breadcrumb">
     {% for crumb in crumbs %}
-      <li>
-        <a href="{{ from_base(crumb['url']) }}">{{crumb['name']}}</a>
-      </li>
+      {% if not loop.last %}
+      <li><a href="{{ from_base(crumb['url']) }}">{{crumb['name']}}</a></li>
+      {% else %}
+      <li class="active">{{crumb['name']}}</li>
+      {% endif %}
     {% endfor %}
   </ol>
   {% endif %}
@@ -45,7 +47,8 @@
   <!-- Le styles -->
   <link href="{{static_url("build/styles.css")}}" rel="stylesheet">
 
-  {% block extra_head %}{% endblock %}
+  {% block extra_head %}
+  {% endblock %}
 </head>
 
 <body>
@@ -56,19 +59,19 @@
   <script src="{{ static_url("components/requirejs/require.js") }}"></script>
   <script src="{{ static_url("components/moment/min/moment.min.js") }}"></script>
 
-  <nav id="menubar" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+  <nav id="menubar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
-          <i class="fa fa-bars"></i>
+          <span class="fa fa-bars"></span>
         </button>
-        <a class="navbar-brand" href="{{ from_base('/') }}">Project name</a>
+        <a class="navbar-brand" href="{{ from_base('/') }}">Data Lab</a>
       </div>
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="active" href="http://jupyter.org">JUPYTER</a></li>
+          <li><a href="http://jupyter.org">Projekt Jupyter</a></li>
           {{ head_text(from_base('/faq'), "FAQ") }}
           {% block otherlinks %}
           {% endblock %}
@@ -98,7 +101,8 @@
   <script src="{{ static_url("components/headroom.js/dist/headroom.min.js") }}"></script>
   <script src="{{ static_url("components/headroom.js/dist/jQuery.headroom.min.js") }}"></script>
 
-  {% block extra_script %}{% endblock %}
+  {% block extra_script %}
+  {% endblock %}
 
 </body>
 </html>
