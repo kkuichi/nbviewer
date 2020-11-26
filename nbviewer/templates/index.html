@@ -1,32 +1,40 @@
 {% extends "layout.html" %}
 
-{% block body %}
-  {% if title or subtitle or text or show_input %}
-  <header class="jumbotron masthead">
-    {% if title %}<h1>{{ title }}</h1>{% endif %}
-    {% if subtitle %}<h2>{{ subtitle }}</h2>{% endif %}
-    {% if text %}
-    {{ text | markdown | safe }}
-    {% endif %}
-  </header>
-  {% endif %}
+{% block container %}
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Vitajte!</h1>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <p><a class="btn btn-primary btn-lg" href="https://datalab.kkui.fei.tuke.sk/jupyter" role="button">Prihlásiť sa &raquo;</a></p>
+    </div>
+  </div>
 
+  <div class="container">
   {% for section in sections %}
-    <section>
-      <h3 class="section-heading">{{section.header}}</h3>
-      <div class="marketing">
-        <ul class="thumbnails example-sites">
-          {% for link in section.links %}
-            <li class="col-md-4">
-              <p class="marketing-byline">{{link.text}}</p>
-              <a class="thumbnail" href="{{ from_base(link.target) }}" target="_blank">
-                <img src="{{ static_url(link.img) }}" />
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
+    <h3>{{section.header}}</h3>
+    <hr/>
+    <div class="row">
+      {% for link in section.links %}
+      <a href="{{ from_base(link.target) }}" class="section-link">
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default section-card">
+            <div class="panel-heading">
+              <h4>{{link.title}}</h4>
+            </div>
+            <div class="panel-body">
+              <p class="text-center">
+                <img src="{{ static_url(link.img) }}" alt="{{link.title}}" class="section-img"/>
+              </p>
+              <p>
+                {{link.text}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+  </div>
   {% endfor %}
+  </div>
 
-{% endblock body %}
+{% endblock container %}

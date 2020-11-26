@@ -19,15 +19,17 @@
 
 {% macro link_breadcrumbs(crumbs) -%}
   {% if crumbs %}
-  <ol class="breadcrumb">
-    {% for crumb in crumbs %}
-      {% if not loop.last %}
-      <li><a href="{{ from_base(crumb['url']) }}">{{crumb['name']}}</a></li>
-      {% else %}
-      <li class="active">{{crumb['name']}}</li>
-      {% endif %}
-    {% endfor %}
-  </ol>
+  <nav>
+    <ol class="breadcrumb">
+      {% for crumb in crumbs %}
+        {% if not loop.last %}
+        <li><a href="{{ from_base(crumb['url']) }}">{{crumb['name']}}</a></li>
+        {% else %}
+        <li class="active">{{crumb['name']}}</li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </nav>
   {% endif %}
 {%- endmacro %}
 
@@ -84,7 +86,8 @@
 
   {% block container %}
   <div class="container" role="main">
-  {% block body %}{% endblock %}
+  {% block body %}
+  {% endblock %}
   </div>
   {% endblock container %}
 

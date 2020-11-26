@@ -15,6 +15,7 @@
            "items": {
              "type": "object",
              "properties": {
+               "title": {"type": "string"},
                "text": {"type": "string"},
                "target": {"type": "string"},
                "img": {"type": "string"}
