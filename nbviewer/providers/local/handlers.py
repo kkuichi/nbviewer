@@ -53,7 +53,7 @@ class LocalFileHandler(RenderingHandler):
             Breadcrumbs suitable for the link_breadcrumbs() jinja macro
         """
         breadcrumbs = [
-            {"url": url_path_join(self.base_url, self._localfile_path), "name": "home"}
+            {"url": url_path_join(self.base_url, self._localfile_path), "name": "Data Lab"}
         ]
         breadcrumbs.extend(super().breadcrumbs(path, self._localfile_path))
         return breadcrumbs

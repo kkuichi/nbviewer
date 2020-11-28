@@ -1,43 +1,51 @@
 {% extends "layout.html" %}
+
 {% block body %}
 {{ link_breadcrumbs(breadcrumbs) }}
-<table class='table table-condensed table-bordered table-striped'>
-  <thead>
-    <tr><th>Name</th><th>Modified</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        {% if len(breadcrumbs) > 1 %}
-          <a href='{{ from_base(breadcrumbs[-2]["url"]) }}'><i class='fa fa-level-up'></i> ..</a>
-        {% endif %}
-      </td>
-      <td></td>
-    </tr>
-    {% for entry in entries %}
+
+<div class="panel panel-default panel-dirview">
+  <table class='table table-bordered table-hover'>
+    <tbody>
+      {% if len(breadcrumbs) > 1 %}
       <tr>
-        <td><i class='{{entry.class}}'></i>
-          {% if entry.url %}
-          <a href='{{ from_base(entry.url) }}'>
-          {% endif %}
-          {{entry.name}}
-          {% if entry.url %}
-            </a>
-          {% endif %}
-        </td>
         <td>
-          <span class="time-col text-muted">{{ entry.modtime }}</span>
+          <a href="{{ from_base(breadcrumbs[-2]['url']) }}">
+            <span class="fa fa-level-up"></span>..
+          </a>
         </td>
       </tr>
-    {% endfor %}
-  </tbody>
-</table>
+      {% endif %}
+      {% for entry in entries %}
+        <tr>
+          <td>
+            <div class="clearfix">
+              <div class="pull-left">
+                <span class="{{entry.class}} text-muted"></span>
+                {% if entry.url %}
+                <a href="{{ from_base(entry.url) }}">
+                {% endif %}
+                {{entry.name}}
+                {% if entry.url %}
+                </a>
+                {% endif %}
+              </div>
+              <div class="pull-right">
+                <span class="modtime text-muted text-right" data-modtime="{{ entry.modtime }}"></span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>  
+</div>
 <script type="text/javascript">
-  require(["moment"], function(moment) {
-    $(".time-col").map(function (i, el) {
-        // convert ISO datestamps to nice momentjs ones
-        el = $(el);
-        el.text(moment(new Date(el.text())).fromNow());
+  require(["moment"], function(moment, sk) {
+    moment.locale("sk");
+    $(".modtime").map(function (i, el) {
+      // convert ISO datestamps to nice momentjs ones
+      el = $(el);
+      el.text(moment(new Date(el.data("modtime"))).fromNow());
     });
   });
 </script>

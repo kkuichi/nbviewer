@@ -6,18 +6,18 @@
   {% for fmt_name, fmt in formats.items() %}
     {% if format != fmt_name %}
       {% if fmt_name == default_format %}
-        {{ layout.head_icon(from_base(format_base), "View as " ~ fmt.label, fmt.icon) }}
+        {{ layout.head_icon(from_base(format_base), "Zobraziť ako " ~ fmt.label, fmt.icon) }}
       {% else %}
-        {{ layout.head_icon(from_base(format_prefix, fmt_name, format_base), "View as " ~ fmt.label, fmt.icon) }}
+        {{ layout.head_icon(from_base(format_prefix, fmt_name, format_base), "Zobraziť ako " ~ fmt.label, fmt.icon) }}
       {% endif %}
     {% endif %}
   {% endfor %}
 
   {% if provider_url %}
-    {{ layout.head_icon(provider_url, "View on " + provider_label, provider_icon) }}
+    {{ layout.head_icon(provider_url, "Zobraziť na " + provider_label, provider_icon) }}
   {% endif %}
 
-  {{ layout.head_icon(download_url, "Download Notebook", "download", True) }}
+  {{ layout.head_icon(download_url, "Stiahnuť Notebook", "download", True) }}
 {% endblock %}
 
 {% block extra_head %}
@@ -39,8 +39,7 @@
   {% endblock %}
 
   {% block mathjax %}
-    <script src="{{ mathjax_url }}MathJax.js?config=TeX-AMS_HTML" type="text/javascript">
-    </script>
+    <script src="{{ mathjax_url }}MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
     <script type="text/javascript">
       init_mathjax = function() {
         if (window.MathJax) {
@@ -110,14 +109,16 @@
 {% block extra_script %}
   {{super()}}
   <script>
-    $(function(){ $("#menubar").headroom({
-      tolerance: 5,
-      offset: 205,
-      classes: {
-        initial: "animated",
-        pinned: "slideInDown",
-        unpinned: "slideOutUp"
-      }
-    })});
+    $(function() {
+      $("#menubar").headroom({
+        tolerance: 5,
+        offset: 205,
+        classes: {
+          initial: "animated",
+          pinned: "slideInDown",
+          unpinned: "slideOutUp"
+        }
+      })
+    });
   </script>
 {% endblock extra_script %}

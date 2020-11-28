@@ -1,54 +1,48 @@
-{
- "title": "nbviewer",
- "subtitle": "A simple way to share Jupyter Notebooks",
- "text": "Enter the location of a Jupyter Notebook to have it rendered here:",
- "show_input": true,
- "sections":[
+[
    {
-     "header":"Programming Languages",
+     "header":"Programovanie",
      "links":[
        {
-        "title": "IPython",
-        "text": "IPython",
-         "target": "/github/ipython/ipython/blob/6.x/examples/IPython%20Kernel/Index.ipynb",
+        "title": "Jazyk Python",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ...",
+         "target": "/localfile/Python",
          "img": "/img/python.svg"
        },
        {
-         "title": "IRuby",
+         "title": "Jazyk R",
          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-         "target": "/github/SciRuby/sciruby-notebooks/blob/master/getting_started.ipynb",
-         "img": "/img/python.svg"
+         "target": "/localfile/R",
+         "img": "/img/R.svg"
        }
      ]
    },
    {
-     "header":"Books",
+     "header":"Dátová analytika",
      "links":[
        {
-         "title": "Python for Signal Processing",
+         "title": "Jazyky pre dátovú analytiku",
          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-         "target": "/github/unpingco/Python-for-Signal-Processing/",
+         "target": "/localfile/JPA",
          "img": "/img/jupyter.svg"
        },
        {
-         "title": "O'Reilly Book",
+         "title": "Objavovanie znalostí",
          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-         "target": "/github/ptwobrussell/Mining-the-Social-Web-2nd-Edition/tree/master/ipynb",
+         "target": "/localfile/OZ",
          "img": "/img/jupyter.svg"
        },
        {
-         "title": "Probabilistic Programming",
+         "title": "Technológie spracovania veľkých dát",
          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-         "target": "/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter1_Introduction/Ch1_Introduction_PyMC3.ipynb",
-         "img": "/img/python.svg"
+         "target": "/localfile/TSVD",
+         "img": "/img/jupyter.svg"
        },
        {
-        "title": "IJulia",
+        "title": "Pokročilé metódy analýzy dát",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-         "target": "/url/jdj.mit.edu/~stevenj/IJulia%20Preview.ipynb",
-         "img": "/img/R.svg"
+         "target": "/github/peterbednar/deeplearning",
+         "img": "/img/jupyter.svg"
        }
      ]
    }
- ]
-}
+]

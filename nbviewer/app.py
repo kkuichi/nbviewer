@@ -515,7 +515,7 @@ class NBViewer(Application):
     def frontpage_setup(self):
         with io.open(self.frontpage, "r") as f:
             frontpage_setup = json.load(f)
-        # check if the JSON has a 'sections' field, otherwise assume it is just a list of sessions,
+        # check if the JSON has a 'sections' field, otherwise assume it is just a list of sections,
         # and provide the defaults of the other fields
         if "sections" not in frontpage_setup:
             frontpage_setup = {
