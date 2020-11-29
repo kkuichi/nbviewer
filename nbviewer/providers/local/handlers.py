@@ -20,7 +20,7 @@ from ..base import RenderingHandler
 
 
 class LocalFileHandler(RenderingHandler):
-    """Renderer for /localfile
+    """Renderer for /www
 
     Serving notebooks from the local filesystem
     """
@@ -28,7 +28,7 @@ class LocalFileHandler(RenderingHandler):
     # cache key is full uri to avoid mixing download vs view paths
     _cache_key_attr = "uri"
     # provider root path
-    _localfile_path = "/localfile"
+    _localfile_path = "/www"
 
     @property
     def localfile_path(self):
@@ -295,4 +295,4 @@ def default_handlers(handlers=[], **handler_names):
 
     local_handler = _load_handler_from_location(handler_names["local_handler"])
 
-    return handlers + [(r"/localfile/?(.*)", local_handler, {})]
+    return handlers + [(r"/www/?(.*)", local_handler, {})]

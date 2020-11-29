@@ -5,13 +5,13 @@
        {
         "title": "Jazyk Python",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ...",
-         "target": "/localfile/Python",
+         "target": "/www/Python",
          "img": "/img/python.svg"
        },
        {
          "title": "Jazyk R",
          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-         "target": "/localfile/R",
+         "target": "/www/R",
          "img": "/img/R.svg"
        }
      ]
@@ -22,19 +22,19 @@
        {
          "title": "Jazyky pre dátovú analytiku",
          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-         "target": "/localfile/JPA",
+         "target": "/www/JPA",
          "img": "/img/jupyter.svg"
        },
        {
          "title": "Objavovanie znalostí",
          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-         "target": "/localfile/OZ",
+         "target": "/www/OZ",
          "img": "/img/jupyter.svg"
        },
        {
          "title": "Technológie spracovania veľkých dát",
          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-         "target": "/localfile/TSVD",
+         "target": "/www/TSVD",
          "img": "/img/apache-spark.svg"
        },
        {
