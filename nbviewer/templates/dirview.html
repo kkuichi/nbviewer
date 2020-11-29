@@ -39,13 +39,16 @@
     </tbody>
   </table>  
 </div>
+{% endblock %}
+
+{% block extra_script %}
+<script src="{{ static_url('components/moment/min/moment-with-locales.min.js') }}"></script>
 <script type="text/javascript">
-  require(["moment"], function(moment, sk) {
+  require(["moment"], function(moment) {
     moment.locale("sk");
-    $(".modtime").map(function (i, el) {
-      // convert ISO datestamps to nice momentjs ones
-      el = $(el);
-      el.text(moment(new Date(el.data("modtime"))).fromNow());
+    $(".modtime").map(function (i, elm) {
+      elm = $(elm);
+      elm.text(moment(new Date(elm.data("modtime"))).fromNow());
     });
   });
 </script>
