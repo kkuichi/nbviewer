@@ -130,6 +130,7 @@ def init_handlers(formats, providers, base_url, localfiles, **handler_kwargs):
         (r"/create/?", create_handler, {}),
         # don't let super old browsers request data-uris
         (r".*/data:.*;base64,.*", custom404_handler, {}),
+        (r"/www/(.*\.svg|.*\.gif|.*\.png|.*\.jpg)", web.StaticFileHandler, {"path": "/var/www"})
     ]
 
     post_providers = [(r"/(robots\.txt|favicon\.ico)", web.StaticFileHandler, {})]

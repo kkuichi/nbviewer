@@ -307,8 +307,8 @@ class NBViewer(Application):
     ).tag(config=True)
 
     localfiles = Unicode(
-        default_value="",
-        help="Allow to serve local files under /localfile/* this can be a security risk.",
+        default_value="/var/www",
+        help="Allow to serve local files under /www/* this can be a security risk.",
     ).tag(config=True)
 
     mathjax_url = Unicode(

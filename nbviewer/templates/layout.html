@@ -11,7 +11,7 @@
 {% macro head_icon(url, name, icon, download=False) -%}
   <li>
     <a href="{{ from_base(url) }}" title="{{name}}" {%if download %}download{% endif %}>
-      <span class="fa fa-{{icon}}"></span>
+      <span class="fa fa-lg fa-{{icon}}"></span>
       <span>{{name}}</span>
     </a>
   </li>
@@ -75,6 +75,12 @@
           {{ head_text(from_base('/faq'), "Návody") }}
           {% block otherlinks %}
           {% endblock %}
+          <li>
+            <a href="https://datala.kkui.fei.tuke.sk/jupyter" title="Data Lab">
+              <span class="fa fa-lg fa-sign-in"></span>
+              <span>Prihlásiť sa</span>
+            </a>
+          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
       {% block menu_extra %}

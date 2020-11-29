@@ -48,4 +48,4 @@ WORKDIR /srv/nbviewer
 USER nobody
 
 EXPOSE 8080
-CMD ["python", "-m", "nbviewer", "--port=8080", "--no-cache", "--template-path", "/srv/nbviewer/templates", "--localfiles", "/www"]
+CMD ["python", "-m", "nbviewer", "--port=8080", "--no-cache", "--template-path", "/srv/nbviewer/templates"]
