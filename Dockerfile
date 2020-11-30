@@ -11,15 +11,12 @@ RUN apt-get update \
     nodejs \
     npm
 
-# Python requirements
-COPY ./requirements-dev.txt /srv/nbviewer/
-COPY ./requirements.txt /srv/nbviewer/
-RUN python3 -mpip install -r /srv/nbviewer/requirements-dev.txt -r /srv/nbviewer/requirements.txt
-
 WORKDIR /srv/nbviewer
 
-# Copy source tree in
-COPY . /srv/nbviewer
+RUN git clone https://github.com/peterbednar/nbviewer.git .
+
+# Python requirements
+RUN python3 -mpip install -r requirements-dev.txt -r requirements.txt
 RUN python3 setup.py build && \
     python3 -mpip wheel -vv . -w /wheels
 
@@ -47,5 +44,5 @@ ENV NBVIEWER_THREADS 2
 WORKDIR /srv/nbviewer
 USER nobody
 
-EXPOSE 8080
-CMD ["python", "-m", "nbviewer", "--port=8080", "--no-cache", "--template-path", "/srv/nbviewer/templates"]
+EXPOSE 5000
+CMD ["python", "-m", "nbviewer"]

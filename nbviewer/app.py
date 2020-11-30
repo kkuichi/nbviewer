@@ -519,9 +519,7 @@ class NBViewer(Application):
         # and provide the defaults of the other fields
         if "sections" not in frontpage_setup:
             frontpage_setup = {
-                "title": "nbviewer",
-                "subtitle": "A simple way to share Jupyter notebooks",
-                "show_input": True,
+                "title": "CHI Data Lab",
                 "sections": frontpage_setup,
             }
         return frontpage_setup
@@ -628,6 +626,7 @@ class NBViewer(Application):
             url_handler=self.url_handler,
             user_gists_handler=self.user_gists_handler,
         )
+
         handler_kwargs = {
             "handler_names": handler_names,
             "handler_settings": self.handler_settings,
