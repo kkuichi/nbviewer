@@ -77,6 +77,11 @@
 
 {% block body %}
   {{ link_breadcrumbs(breadcrumbs) }}
+
+  <div class="alert alert-info">
+    Toto je <strong>statické zobrazenie</strong>, ak chcete Notebook spustiť, <a href="https://datalab.kkui.fei.tuke.sk/jupyter">prihláste sa</a> do prostredia Data Lab.
+  </div>
+
   <div id="notebook">
     <div id="notebook-container">
       {{ body | safe}}
