@@ -13,7 +13,8 @@ RUN apt-get update \
 
 WORKDIR /srv/nbviewer
 
-RUN git clone https://github.com/peterbednar/nbviewer.git .
+# RUN git clone https://github.com/peterbednar/nbviewer.git .
+COPY . /srv/nbviewer
 
 # Python requirements
 RUN python3 -mpip install -r requirements-dev.txt -r requirements.txt
@@ -33,7 +34,6 @@ RUN apt-get update \
     libcurl4 \
     git \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
-
 
 COPY --from=builder /wheels /wheels
 RUN python3 -mpip install --no-cache /wheels/*
