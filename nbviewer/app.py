@@ -82,7 +82,7 @@ def nrfoot():
 
 
 this_dir, this_filename = os.path.split(__file__)
-FRONTPAGE_JSON = os.path.join(this_dir, "frontpage.json")
+FRONTPAGE_JSON = "frontpage.json"
 
 
 class NBViewer(Application):
