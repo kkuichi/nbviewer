@@ -3,6 +3,8 @@
 {% block body %}
 
 <div class="col-md-10 col-md-offset-1">
+ 
+{% filter markdown() %}
 
 ## Návody pre prostredie CHI Data Lab
 
@@ -32,5 +34,7 @@ Po prihlásení sa spustí samostatný server pre výpočty pre každého použ�
 Okrem adresára work máte k dispozícii adresár **datalab**, v ktorom nájdete súbory zdieľané pre jednotlivé cvičenia vašim cvičiacim, alebo prednášajúcim. Adresár datalab je pre Vás iba na čítanie, tzn. môžete napr. v ňom notebooky spustiť, ale ak chcete uložiť nejaké zmeny, musíte ich uložiť ako kópiu do adresára work.
 
 </div>
+
+{% endfilter %}
 
 {% endblock %}
