@@ -43,15 +43,16 @@
 
 <table class="table">
   <thead><th class="thead-light">Konfigurácia prostredia</th><th>Image</th></thead>
-  <tr><td>Jupyter Notebook Data Science Stack</td><td><code>peterbednar/datascience-notebook:2.3.1</code></td></tr>
-  <tr><td>Jupyter Notebook Deep Learning Stack</td><td><code>peterbednar/tensorflow-notebook:2.3.1</code></td></tr>
-  <tr><td>Jupyter Notebook Python Spark Stack</td><td><code>peterbednar/pyspark-notebook:2.3.1</code></td></tr>
+  <tr><td><em>Jupyter Notebook Data Science Stack</em></td><td><code>peterbednar/datascience-notebook:2.3.1</code></td></tr>
+  <tr><td><em>Jupyter Notebook Deep Learning Stack</em></td><td><code>peterbednar/tensorflow-notebook:2.3.1</code></td></tr>
+  <tr><td><em>Jupyter Notebook Python Spark Stack</em></td><td><code>peterbednar/pyspark-notebook:2.3.1</code></td></tr>
 </table>
 
 <ol>
   <li>V príkazovom riadku sa prepnite do adresára na vašom počítači, v ktorom máte lokálne uložené súbory s ktorými chcete pracovať. Tento adresár sa v serveri sprístupní ako Váš pracovný adresár work.</li>
   <li>
     Spustite server príkazom:
+    <br/>
     <strong>Windows</strong>
     <pre>docker run -it --rm -v "%cd%":/home/jovyan/work -p 8888:8888 peterbednar/datascience-notebook:2.3.1</pre>
     <strong>Linux/macOS</strong>
