@@ -49,7 +49,7 @@ class FAQHandler(BaseHandler):
     """Render the markdown FAQ page"""
 
     def get(self):
-        self.finish(self.render_template("faq.md"))
+        self.finish(self.render_template("faq.html"))
 
 
 class CreateHandler(BaseHandler):

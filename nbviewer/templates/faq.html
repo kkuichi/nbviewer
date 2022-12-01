@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="col-md-10 col-md-offset-1">
+
+<h2>Návody pre prostredie CHI Data Lab</h2>
+
+<h3>Prihlásenie a voľba prostredia</h3>
+<p>
+  Do prostredia Data Lab sa môžete prihlásiť svojim študentským kontom na TUKE. Po zadaní používateľského mena (v tvare ab123cd) a hesla sa zobrazia nastavenia servera na ktorom budete pracovať. Pre každého študenta sa vytvorí samostatný server. Na výber máte nasledujúce možnosti konfigurácie:
+</p>
+<ul>
+  <li><em>Jupyter Notebook Data Science Stack</em> – obsahuje nástroje pre programovanie v jazyku Python a R so zameraním na dátovú analytiku. Toto prostredie zvoľte pre predmet JDA.</li>
+  <li><em>Jupyter Notebook Deep Learning Stack</em> – obsahuje prostredie TensorFlow pre programovanie metód hlbokého učenia. Toto prostredie zvoľte pre predmet PMAD.</li>
+  <li><em>Jupyter Notebook Python Spark Stack</em> – obsahuje prostredie pre distribuované výpočty Apache Spark. Toto prostredie zvoľte pre predmet TSVD.</li>
+</ul>
+<p>Ak sa chcete prepnúť medzi konfiguráciami:</p>
+<ol>
+  <li>uložte si Vašu prácu (pozri nasledujúcu časť)</li>
+  <li>v menu File zvoľte Hub Control Panel</li>
+  <li>kliknite na tlačidlo Stop My Server, a následne Start My Server</li>
+  <li>znova sa Vám zobrazia možnosti konfigurácie a pre nový sever sa môžete prepnúť do iného prostredia.</li>
+</ol>
+
+<h3>Hlavné rozhranie</h3>
+<p>
+  Ako hlavné programátorské rozhranie je prednastavené prostredie <a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a>. Viac informácií o práci v tomto prostredí nájdete v menu Help > JupyterLab Reference (v angličtine). Ak chcete používať klasické rozhranie <a href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebook</a>, v menu Help zvoľte Launch Classic Notebook.
+</p>
+
+<h3>Pracovný adresár a zdieľané dáta</h3>
+<p>
+  Po prihlásení sa spustí samostatný server pre výpočty pre každého používateľa. Tento server je dočasný a automaticky sa odstráni ak na ňom nebudete pracovať nejakú dobu. Ak si chcete trvalo uchovať svoje súbory (notebooky, dáta, atď.), musíte ich uložiť v adresári <strong>work</strong>. V adresári work si môžete vytvoriť aj svoje podadresáre. Všetky ostatné dáta mimo adresára work (vrátane napr. vami nainštalovaných knižníc a balíkov v Pythone, alebo R) môžu byť automaticky vymazané. Adresár work je zdieľaný medzi všetkými konfiguráciami prostredia.
+</p>
+<p>
+  Okrem adresára work máte k dispozícii adresár <strong>datalab</strong>, v ktorom nájdete súbory zdieľané pre jednotlivé cvičenia vašim cvičiacim, alebo prednášajúcim. Adresár datalab je pre Vás iba na čítanie, tzn. môžete napr. v ňom notebooky spustiť, ale ak chcete uložiť nejaké zmeny, musíte ich uložiť ako kópiu do adresára work.
+</p>
+
+<h3>Lokálne prostredie</h3>
+<p>
+  Server prostredia Data Lab si môžete spustiť aj lokálne na svojom počítači v prostredí Docker. Pre lokálne spustenie servera si najprv nainštalujte prostredie Docker podľa <a href="https://docs.docker.com/get-docker/">návodu</a> pre Váš operačný systém a zvoľte Docker image pre Data Lab konfiguráciu podľa nasledujúcej tabuľky:
+</p>
+
+<table class="table">
+  <thead><th class="thead-light">Konfigurácia prostredia</th><th>Image</th></thead>
+  <tr><td>Jupyter Notebook Data Science Stack</td><td><code>peterbednar/datascience-notebook:2.3.1</code></td></tr>
+  <tr><td>Jupyter Notebook Deep Learning Stack</td><td><code>peterbednar/tensorflow-notebook:2.3.1</code></td></tr>
+  <tr><td>Jupyter Notebook Python Spark Stack</td><td><code>peterbednar/pyspark-notebook:2.3.1</code></td></tr>
+</table>
+
+<ol>
+  <li>V príkazovom riadku sa prepnite do adresára na vašom počítači, v ktorom máte lokálne uložené súbory s ktorými chcete pracovať. Tento adresár sa v serveri sprístupní ako Váš pracovný adresár work.</li>
+  <li>
+    Spustite server príkazom:
+    <strong>Windows</strong>
+    <pre>docker run -it --rm -v "%cd%":/home/jovyan/work -p 8888:8888 peterbednar/datascience-notebook:2.3.1</pre>
+    <strong>Linux/macOS</strong>
+    <pre>docker run -it --rm -v "${PWD}":/home/jovyan/work -p 8888:8888 peterbednar/datascience-notebook:2.3.1</pre>
+  </li>
+  <li>Vo výpise na obrazovke príkazového riadku sa zobrazí adresa URL, prostredníctvom ktorej sa pripojíte k lokálnemu serveru cez Váš prehliadač.</li>
+</ol>
+
+<p>
+  Ak máte grafickú kartu NVidia s podporou CUDA a systém Linux, pre prostredie <em>Jupyter Notebook Deep Learning Stack</em> môžete zvoliť image <code>peterbednar/tensorflow-gpu-notebook:2.3.1</code>, v ktorom môžete využiť akceleráciu výpočtov na GPU.
+</p>
+
+</div>
+
+{% endblock %}

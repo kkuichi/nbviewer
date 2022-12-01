@@ -1,0 +1,65 @@
+[
+    {
+      "header":"Programovanie",
+      "links":[
+        {
+         "title": "Jazyk Python",
+         "text": "Základný všeobecný kurz programovania v jazyku Python.",
+          "target": "/www/Python",
+          "img": "/img/python.svg"
+        },
+        {
+          "title": "Jazyk R",
+          "text": "Základný všeobecný kurz programovania v jazyku R.",
+          "target": "/www/R",
+          "img": "/img/R.svg"
+        }
+      ]
+    },
+    {
+      "header":"Dátová analytika",
+      "links":[
+        {
+          "title": "Jazyky pre dátovú analytiku",
+          "text": "Základný kurz programovania v jazyku Python a R so zameraním na riešenie úloh analýzy dát.",
+          "target": "/www/JDA",
+          "img": "/img/jupyter.svg"
+        },
+        {
+          "title": "Technológie spracovania veľkých dát",
+          "text": "Kurz zameraný na technológie spracovania veľkých dát (distribuované databázy a distribuované výpočty v prostredí Apache Spark).",
+          "target": "/www/TSVD",
+          "img": "/img/apache-spark.svg"
+        },
+        {
+         "title": "Pokročilé metódy analýzy dát",
+         "text": "Kurz zameraný na návrh metód hlbokého učenia (dopredných, konvolúčnych a rekurentných sietí) v knižnici Tensorflow.",
+          "target": "/www/PMAD",
+          "img": "/img/jupyter.svg"
+        }
+      ]
+    },
+    {
+      "header":"EDUCO - Data Science",
+      "links":[
+        {
+          "title": "Data Science",
+          "text": "The Data Science course provides a foundation and methodology for the predictive and descriptive data mining.",
+          "target": "/www/EDUCO/DataScience",
+          "img": "/img/jupyter.svg"
+        },
+        {
+         "title": "Data Science - Project",
+         "text": "The Data Science project demonstrates the practical realization of the data-analytical task on the real dataset.",
+          "target": "/www/EDUCO/DataScienceProject",
+          "img": "/img/jupyter.svg"
+        },
+        {
+          "title": "Big Data",
+          "text": "The Big Data course provides an introduction to distributed technologies for the processing of Big Data.",
+          "target": "/www/EDUCO/BigData",
+          "img": "/img/apache-spark.svg"
+        }
+      ]
+    }
+ ]

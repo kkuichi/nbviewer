@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+
+  nbviewer:
+    build: .
+    ports:
+      - "8080:5000"
+    volumes:
+      - ${PWD}/frontpage.json:/srv/nbviewer/frontpage.json
