@@ -2,12 +2,12 @@ elasticsearch
 ipython
 ipython_genutils
 jupyter_client
-jupyter_server>=0.2.0
-markdown==3.4.1
-jinja2==3.0.3 # pin to fix #958
-nbconvert>=5.4,<6.0.0 # pin to fix #958
-nbformat>=4.2
-newrelic!=2.80.0.60
+jupyter_server
+markdown
+jinja2
+nbconvert>=7.0.0
+nbformat>=5.4.0
+newrelic
 pycurl
 pylibmc
 statsd
