@@ -52,7 +52,7 @@ def walk_subpkg(name):
 
 pkg_data = {
     "nbviewer": (
-        ["frontpage.json", "git_info.json"]
+        ["git_info.json"]
         + walk_subpkg("static")
         + walk_subpkg("templates")
         + walk_subpkg("providers")
