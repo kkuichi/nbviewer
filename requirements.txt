@@ -1,8 +1,8 @@
 elasticsearch
 ipython
 ipython_genutils
-jupyter_client
-jupyter_server
+jupyter_client==7.3.4
+jupyter_server==1.18.1
 markdown
 jinja2
 nbconvert>=7.0.0
