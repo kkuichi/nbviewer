@@ -520,7 +520,7 @@ class NBViewer(Application):
         # and provide the defaults of the other fields
         if "sections" not in frontpage_setup:
             frontpage_setup = {
-                "title": "CHI Data Lab",
+                "title": "KKUI Data Lab",
                 "sections": frontpage_setup,
             }
         return frontpage_setup
