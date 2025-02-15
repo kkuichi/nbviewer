@@ -25,7 +25,7 @@
 
 <h3>Hlavné rozhranie</h3>
 <p>
-  Ako hlavné programátorské rozhranie je prednastavené prostredie <a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a>. Viac informácií o práci v tomto prostredí nájdete v menu Help > JupyterLab Reference (v angličtine). Ak chcete používať klasické rozhranie <a href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebook</a>, v menu Help zvoľte Launch Classic Notebook.
+  Ako hlavné programátorské rozhranie je prednastavené prostredie <a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a>. Viac informácií o práci v tomto prostredí nájdete v menu Help &gt; JupyterLab Reference (v angličtine). Ak chcete používať klasické rozhranie <a href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebook</a>, v menu Help zvoľte Launch Classic Notebook.
 </p>
 
 <h3>Pracovný adresár a zdieľané dáta</h3>
@@ -43,9 +43,9 @@
 
 <table class="table">
   <thead><th class="thead-light">Konfigurácia prostredia</th><th>Image</th></thead>
-  <tr><td><em>Jupyter Notebook Data Science Stack</em></td><td><code>peterbednar/datascience-notebook:2.3.1</code></td></tr>
-  <tr><td><em>Jupyter Notebook Deep Learning Stack</em></td><td><code>peterbednar/tensorflow-notebook:2.3.1</code></td></tr>
-  <tr><td><em>Jupyter Notebook Python Spark Stack</em></td><td><code>peterbednar/pyspark-notebook:2.3.1</code></td></tr>
+  <tr><td><em>Jupyter Notebook Data Science Stack</em></td><td><code>peterbednar/datascience-notebook:5.2.1</code></td></tr>
+  <tr><td><em>Jupyter Notebook Deep Learning Stack</em></td><td><code>peterbednar/tensorflow-notebook:5.2.1</code></td></tr>
+  <tr><td><em>Jupyter Notebook Python Spark Stack</em></td><td><code>peterbednar/pyspark-notebook:5.2.1</code></td></tr>
 </table>
 
 <ol>
@@ -54,15 +54,15 @@
     Spustite server príkazom:
     <br/>
     <strong>Windows</strong>
-    <pre>docker run -it --rm -v "%cd%":/home/jovyan/work -p 8888:8888 peterbednar/datascience-notebook:2.3.1</pre>
+    <pre>docker run -it --rm -v "%cd%":/home/jovyan/work -p 8888:8888 peterbednar/datascience-notebook:5.2.1</pre>
     <strong>Linux/macOS</strong>
-    <pre>docker run -it --rm -v "${PWD}":/home/jovyan/work -p 8888:8888 peterbednar/datascience-notebook:2.3.1</pre>
+    <pre>docker run -it --rm -v "${PWD}":/home/jovyan/work -p 8888:8888 peterbednar/datascience-notebook:5.2.1</pre>
   </li>
   <li>Vo výpise na obrazovke príkazového riadku sa zobrazí adresa URL, prostredníctvom ktorej sa pripojíte k lokálnemu serveru cez Váš prehliadač.</li>
 </ol>
 
 <p>
-  Ak máte grafickú kartu NVidia s podporou CUDA a systém Linux, pre prostredie <em>Jupyter Notebook Deep Learning Stack</em> môžete zvoliť image <code>peterbednar/tensorflow-gpu-notebook:2.3.1</code>, v ktorom môžete využiť akceleráciu výpočtov na GPU.
+  Ak máte grafickú kartu NVidia s podporou CUDA a systém Linux, pre prostredie <em>Jupyter Notebook Deep Learning Stack</em> môžete zvoliť image <code>peterbednar/tensorflow-gpu-notebook:5.2.1</code>, v ktorom môžete využiť akceleráciu výpočtov na GPU.
 </p>
 
 </div>

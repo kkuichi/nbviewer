@@ -84,6 +84,7 @@ def nrfoot():
 this_dir, this_filename = os.path.split(__file__)
 FRONTPAGE_JSON = "frontpage.json"
 
+COOKIE_SECRET = "IWzSjezLX1"
 
 class NBViewer(Application):
 
@@ -649,6 +650,7 @@ class NBViewer(Application):
             # Allow FileFindHandler to load static directories from e.g. a Docker container
             allow_remote_access=True,
             base_url=self._base_url,
+            cookie_secret = COOKIE_SECRET,
             binder_base_url=self.binder_base_url,
             cache=self.cache,
             cache_expiry_max=self.cache_expiry_max,
